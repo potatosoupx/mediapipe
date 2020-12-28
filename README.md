@@ -1,3 +1,9 @@
+# mediapipe_for_movie.ipynb
+　動画に対してホリスティック検出（顔・手・ポーズの統合検出）を行うコードです。ファイルを開いて、先頭にある「Open in Colab」ボタンを押すと、Google Colab上で実行できます。詳細は、[cedro-blog](http://cedro3.com/ai/mediapipe/) を参照下さい。
+
+
+
+
 # mediapipe-python-sample
 [MediaPipe](https://github.com/google/mediapipe)のPythonパッケージのサンプルです。<br>
 2020/12/11時点でPython実装のある以下4機能について用意しています。
