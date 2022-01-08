@@ -77,8 +77,8 @@ def main():
         # upper_body_only=upper_body_only,
         model_complexity=model_complexity,
         smooth_landmarks=smooth_landmarks,
-        enable_segmentation=enable_segmentation,
-        smooth_segmentation=smooth_segmentation,
+        #enable_segmentation=enable_segmentation,    ###
+        #smooth_segmentation=smooth_segmentation,    ###
         min_detection_confidence=min_detection_confidence,
         min_tracking_confidence=min_tracking_confidence,
     )
