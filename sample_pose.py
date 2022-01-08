@@ -72,7 +72,7 @@ def main():
     pose = mp_pose.Pose(
         # upper_body_only=upper_body_only,
         model_complexity=model_complexity,
-        enable_segmentation=enable_segmentation,
+        #enable_segmentation=enable_segmentation,   ###
         min_detection_confidence=min_detection_confidence,
         min_tracking_confidence=min_tracking_confidence,
     )
