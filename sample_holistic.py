@@ -74,7 +74,7 @@ def main():
     # モデルロード #############################################################
     mp_holistic = mp.solutions.holistic
     holistic = mp_holistic.Holistic(
-        # upper_body_only=upper_body_only,
+        upper_body_only=upper_body_only,
         model_complexity=model_complexity,
         smooth_landmarks=smooth_landmarks,
         #enable_segmentation=enable_segmentation,    ###
@@ -137,7 +137,7 @@ def main():
             debug_image = draw_pose_landmarks(
                 debug_image,
                 pose_landmarks,
-                # upper_body_only,
+                upper_body_only,
             )
             debug_image = draw_bounding_rect(use_brect, debug_image, brect)
 
@@ -165,7 +165,7 @@ def main():
                 cx,
                 cy,
                 left_hand_landmarks,
-                # upper_body_only,
+                upper_body_only,
                 'R',
             )
             debug_image = draw_bounding_rect(use_brect, debug_image, brect)
@@ -181,7 +181,7 @@ def main():
                 cx,
                 cy,
                 right_hand_landmarks,
-                # upper_body_only,
+                upper_body_only,
                 'L',
             )
             debug_image = draw_bounding_rect(use_brect, debug_image, brect)
@@ -261,7 +261,7 @@ def draw_hands_landmarks(
         cx,
         cy,
         landmarks,
-        # upper_body_only,
+        upper_body_only,
         handedness_str='R'):
     image_width, image_height = image.shape[1], image.shape[0]
 
@@ -326,7 +326,7 @@ def draw_hands_landmarks(
             cv.circle(image, (landmark_x, landmark_y), 5, (0, 255, 0), 2)
             cv.circle(image, (landmark_x, landmark_y), 12, (0, 255, 0), 2)
 
-        # if not upper_body_only:
+        if not upper_body_only:
         if True:
             cv.putText(image, "z:" + str(round(landmark_z, 3)),
                        (landmark_x - 10, landmark_y - 10),
@@ -512,7 +512,7 @@ def draw_face_landmarks(image, landmarks):
 def draw_pose_landmarks(
     image,
     landmarks,
-    # upper_body_only,
+    upper_body_only,
     visibility_th=0.5,
 ):
     image_width, image_height = image.shape[1], image.shape[0]
@@ -595,7 +595,7 @@ def draw_pose_landmarks(
         if index == 32:  # 左つま先
             cv.circle(image, (landmark_x, landmark_y), 5, (0, 255, 0), 2)
 
-        # if not upper_body_only:
+        if not upper_body_only:
         if True:
             cv.putText(image, "z:" + str(round(landmark_z, 3)),
                        (landmark_x - 10, landmark_y - 10),
