@@ -17,7 +17,7 @@ def get_args():
     parser.add_argument("--width", help='cap width', type=int, default=960)
     parser.add_argument("--height", help='cap height', type=int, default=540)
 
-    # parser.add_argument('--upper_body_only', action='store_true')  # 0.8.3 or less
+    parser.add_argument('--upper_body_only', action='store_true')  # 0.8.3 or less
     parser.add_argument('--unuse_smooth_landmarks', action='store_true')
     parser.add_argument('--enable_segmentation', action='store_true')
     parser.add_argument('--smooth_segmentation', action='store_true')
