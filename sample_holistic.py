@@ -54,7 +54,7 @@ def main():
     cap_width = args.width
     cap_height = args.height
 
-    # upper_body_only = args.upper_body_only
+    upper_body_only = args.upper_body_only
     smooth_landmarks = not args.unuse_smooth_landmarks
     enable_segmentation = args.enable_segmentation
     smooth_segmentation = args.smooth_segmentation
