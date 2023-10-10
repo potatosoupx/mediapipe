@@ -70,7 +70,7 @@ def main():
     args.upper_body_only = True
     mp_pose = mp.solutions.pose
     pose = mp_pose.Pose(
-        upper_body_only=upper_body_only,
+        upper_body_only= True,
         model_complexity=model_complexity,
         #enable_segmentation=enable_segmentation,   ###
         min_detection_confidence=min_detection_confidence,
