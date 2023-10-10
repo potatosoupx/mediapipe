@@ -72,6 +72,8 @@ def main():
     cap.set(cv.CAP_PROP_FRAME_HEIGHT, cap_height)
 
     # モデルロード #############################################################
+    args.upper_body_only = True
+
     mp_holistic = mp.solutions.holistic
     holistic = mp_holistic.Holistic(
         upper_body_only=upper_body_only,
