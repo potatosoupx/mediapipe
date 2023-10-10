@@ -76,7 +76,7 @@ def main():
 
     mp_holistic = mp.solutions.holistic
     holistic = mp_holistic.Holistic(
-        upper_body_only=upper_body_only,
+        upper_body_only=True,
         model_complexity=model_complexity,
         smooth_landmarks=smooth_landmarks,
         #enable_segmentation=enable_segmentation,    ###
