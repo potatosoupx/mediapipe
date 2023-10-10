@@ -67,6 +67,7 @@ def main():
     cap.set(cv.CAP_PROP_FRAME_HEIGHT, cap_height)
 
     # モデルロード #############################################################
+    args.upper_body_only = True
     mp_pose = mp.solutions.pose
     pose = mp_pose.Pose(
         upper_body_only=upper_body_only,
