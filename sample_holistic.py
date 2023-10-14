@@ -89,15 +89,15 @@ def main():
     cvFpsCalc = CvFpsCalc(buffer_len=10)
 
     # World座標プロット ########################################################
-    if plot_world_landmark:
-        import matplotlib.pyplot as plt
+    # if plot_world_landmark:
+    #     import matplotlib.pyplot as plt
         
-        fig = plt.figure()
-        ax = fig.add_subplot(111, projection="3d")
-        fig.subplots_adjust(left=0.0, right=1, bottom=0, top=1)
+    #     fig = plt.figure()
+    #     ax = fig.add_subplot(111, projection="3d")
+    #     fig.subplots_adjust(left=0.0, right=1, bottom=0, top=1)
 
-    while True:
-        display_fps = cvFpsCalc.get()
+    # while True:
+    #     display_fps = cvFpsCalc.get()
 
         # カメラキャプチャ #####################################################
         ret, image = cap.read()
@@ -143,14 +143,14 @@ def main():
             )
             debug_image = draw_bounding_rect(use_brect, debug_image, brect)
 
-        # Pose:World座標プロット #############################################
-        if plot_world_landmark:
-            if results.pose_world_landmarks is not None:
-                plot_world_landmarks(
-                    plt,
-                    ax,
-                    results.pose_world_landmarks,
-                )
+        # # Pose:World座標プロット #############################################
+        # if plot_world_landmark:
+        #     if results.pose_world_landmarks is not None:
+        #         plot_world_landmarks(
+        #             plt,
+        #             ax,
+        #             results.pose_world_landmarks,
+        #         )
 
         # Hands ###############################################################
         left_hand_landmarks = results.left_hand_landmarks
@@ -746,25 +746,25 @@ def draw_pose_landmarks(
     return image
 
 
-def plot_world_landmarks(
-    plt,
-    ax,
-    landmarks,
-    visibility_th=0.5,
-):
-    landmark_point = []
+# def plot_world_landmarks(
+#     plt,
+#     ax,
+#     landmarks,
+#     visibility_th=0.5,
+# ):
+#     landmark_point = []
 
-    for index, landmark in enumerate(landmarks.landmark):
-        landmark_point.append(
-            [landmark.visibility, (landmark.x, landmark.y, landmark.z)])
+#     for index, landmark in enumerate(landmarks.landmark):
+#         landmark_point.append(
+#             [landmark.visibility, (landmark.x, landmark.y, landmark.z)])
 
-    face_index_list = #[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    right_arm_index_list = [11, 13, 15, 17, 19, 21]
-    left_arm_index_list = [12, 14, 16, 18, 20, 22]
-    right_body_side_index_list = [11, 23]#[11, 23, 25, 27, 29, 31]
-    left_body_side_index_list = [12, 24] #[12, 24, 26, 28, 30, 32]
-    shoulder_index_list = [11, 12]
-    waist_index_list = [23, 24]
+#     face_index_list = #[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#     right_arm_index_list = [11, 13, 15, 17, 19, 21]
+#     left_arm_index_list = [12, 14, 16, 18, 20, 22]
+#     right_body_side_index_list = [11, 23]#[11, 23, 25, 27, 29, 31]
+#     left_body_side_index_list = [12, 24] #[12, 24, 26, 28, 30, 32]
+#     shoulder_index_list = [11, 12]
+#     waist_index_list = [23, 24]
 
     # 顔
     face_x, face_y, face_z = [], [], []
