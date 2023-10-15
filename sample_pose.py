@@ -156,6 +156,8 @@ def calc_bounding_rect(image, landmarks):
     landmark_array = np.empty((0, 2), int)
 
     for _, landmark in enumerate(landmarks.landmark):
+        if idx in [1, 2, 3, 4, 5]:
+      continue
         landmark_x = min(int(landmark.x * image_width), image_width - 1)
         landmark_y = min(int(landmark.y * image_height), image_height - 1)
 
