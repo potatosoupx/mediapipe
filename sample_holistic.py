@@ -522,6 +522,8 @@ def draw_pose_landmarks(
     landmark_point = []
 
     for index, landmark in enumerate(landmarks.landmark):
+        if idx in [1, 2, 3, 4, 5]:
+      continue
         landmark_x = min(int(landmark.x * image_width), image_width - 1)
         landmark_y = min(int(landmark.y * image_height), image_height - 1)
         landmark_z = landmark.z
